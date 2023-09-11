@@ -1,4 +1,4 @@
-package pers.zymir.spring.bean.cofiguration;
+package pers.zymir.spring.bean.condition;
 
 import org.junit.Assert;
 import org.junit.Test;
