@@ -16,6 +16,10 @@
     <packaging>pom</packaging>
     <modules>
         <module>spring-framework-bean</module>
+        <module>spring-framework-aop</module>
+        <module>spring-framework-spel</module>
+        <module>spring-framework-mvc</module>
+        <module>spring-framework-transactional</module>
     </modules>
 
     <properties>
