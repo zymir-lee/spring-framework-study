@@ -36,13 +36,14 @@ public class AopAspect {
         String joinPointMethodName = this.getJoinPointMethodName(joinPoint);
 
         log.info("around advice开始执行, 当前方法: {}", joinPointMethodName);
-        Object result = joinPoint.proceed();
+        Object result = joinPoint.proceed(); // 环绕通知需要手动执行方法，并且可以获取到返回结果
         log.info("around advice执行结束");
         return result;
     }
 
     @AfterReturning(value = "pointcut()", returning = "returnValue")
     public void afterReturningAdvice(JoinPoint joinPoint, Object returnValue) {
+        // returnValue属性获取返回值，可以放到方法参数里拿到
         String joinPointMethodName = getJoinPointMethodName(joinPoint);
         log.info("afterReturningAdvice执行, 当前方法：{} , 返回结果: {}", joinPointMethodName, returnValue);
     }
