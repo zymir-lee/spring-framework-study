@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
+// 读取指定配置文件到environment中
 @PropertySource("classpath:redis.properties")
 public class ConditionBeanConfig {
 
