@@ -44,6 +44,15 @@ public class WebController {
         // response对象用来写入响应报文内容 例如状态码等
     }
 
+    @GetMapping("/exception")
+    public String exception(@RequestParam("enable") boolean enable) {
+        if (enable) {
+            throw new RuntimeException();
+        } else {
+            return "success";
+        }
+    }
+
     @Data
     public static class Req {
         private Long id;
