@@ -35,7 +35,7 @@ public class WebController {
         log.info("post请求获取body内容: {}", req);
     }
 
-    @GetMapping
+    @GetMapping("/http")
     public void http(HttpServletRequest request, HttpServletResponse response) throws IOException {
         // 接口获取httpRequest httpResponse对象
         // request对象用来获取请求报文内容
