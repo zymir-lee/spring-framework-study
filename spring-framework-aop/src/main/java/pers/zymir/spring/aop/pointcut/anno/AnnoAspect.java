@@ -27,6 +27,22 @@ public class AnnoAspect {
     public void annoWithInBeforeAdvice(JoinPoint joinPoint) {
         MethodSignature methodSignature = AopJoinPointAspect.AopUtil.convert2MethodSignature(joinPoint);
         String name = methodSignature.getMethod().getName();
-        log.info("当前方法：{} 被拦截", name);
+        log.info("@within advice 当前方法：{} 被拦截", name);
+    }
+
+    @Pointcut("@annotation(pers.zymir.spring.aop.pointcut.anno.AnnoAop)")
+    public void anno() {
+    }
+
+    /**
+     * @annotation pointcut指示器
+     * 拦截具有指定注解的方法, 如果希望类上具有该注解也被拦截可以使用布尔表达式：
+     * @annotation(pers.zymir.spring.aop.pointcut.anno.AnnoAop) || @within(pers.zymir.spring.aop.pointcut.anno.AnnoAop)
+     */
+    @Before("anno()")
+    public void annoInBeforeAdvice(JoinPoint joinPoint) {
+        MethodSignature methodSignature = AopJoinPointAspect.AopUtil.convert2MethodSignature(joinPoint);
+        String name = methodSignature.getMethod().getName();
+        log.info("@annotation advice 当前方法：{} 被拦截", name);
     }
 }

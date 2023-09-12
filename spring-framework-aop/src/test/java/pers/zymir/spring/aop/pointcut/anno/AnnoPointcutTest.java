@@ -17,4 +17,9 @@ public class AnnoPointcutTest {
     public void annoWithInTest() {
         annoWithinPointcutService.foo();
     }
+
+    @Test
+    public void annoTest() {
+        annoWithinPointcutService.annoFoo();
+    }
 }

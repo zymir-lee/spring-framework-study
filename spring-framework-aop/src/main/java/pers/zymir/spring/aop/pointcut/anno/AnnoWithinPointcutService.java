@@ -8,6 +8,11 @@ import org.springframework.stereotype.Service;
 @Aop(desc = "测试@within")
 public class AnnoWithinPointcutService {
     public void foo() {
-        log.info("AnnoPointCutService execute");
+        log.info("@within method execute");
+    }
+
+    @AnnoAop(desc = "测试@annotation")
+    public void annoFoo() {
+        log.info("@annotation method execute");
     }
 }
