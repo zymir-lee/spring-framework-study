@@ -1,5 +1,6 @@
 package pers.zymir.spring.aop.advice;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,6 @@ public class AopAdviceTest {
 
     @Test
     public void aopThrowingTest() {
-        System.out.println(service.queryUserNameThrowing(123L));
+        Assert.assertThrows(RuntimeException.class, () -> service.queryUserNameThrowing(123L));
     }
 }
