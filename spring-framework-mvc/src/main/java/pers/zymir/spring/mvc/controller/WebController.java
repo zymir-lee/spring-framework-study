@@ -27,8 +27,9 @@ public class WebController {
     }
 
     @GetMapping("/{param}")
-    public void pathParam(@PathVariable("param") String param) {
+    public String pathParam(@PathVariable("param") String param) {
         log.info("URL路径参数获取:{}", param);
+        return "this is body";
     }
 
     @PostMapping
