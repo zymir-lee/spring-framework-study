@@ -15,8 +15,9 @@ import java.io.IOException;
 @Slf4j
 public class WebController {
 
+    // 基本都存在defaultValue、required参数表示默认值、以及是否必须
     @GetMapping
-    public String get(@RequestParam("param") String param,
+    public String get(@RequestParam(value = "param", defaultValue = "value", required = false) String param,
                       @CookieValue("token") String token,
                       @RequestHeader("header") String header) {
         log.info("请求参数获取:{}", param);
