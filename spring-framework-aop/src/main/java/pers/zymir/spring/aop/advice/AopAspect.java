@@ -5,6 +5,7 @@ import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.aspectj.lang.reflect.MethodSignature;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Method;
@@ -12,6 +13,8 @@ import java.lang.reflect.Method;
 @Component
 @Aspect
 @Slf4j
+// 多个切面通过order指定顺序 越小越先执行
+@Order(value = 0)
 public class AopAspect {
 
     @Pointcut("execution(* pers.zymir.spring.aop.advice.*.*(..))")
