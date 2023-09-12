@@ -22,4 +22,9 @@ public class AnnoPointcutTest {
     public void annoTest() {
         annoWithinPointcutService.annoFoo();
     }
+
+    @Test
+    public void annoArgsTest() {
+        annoWithinPointcutService.annoArgsFoo(new AnnoParam());
+    }
 }

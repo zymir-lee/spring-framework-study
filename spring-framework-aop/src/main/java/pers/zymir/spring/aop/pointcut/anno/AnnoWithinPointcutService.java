@@ -15,4 +15,8 @@ public class AnnoWithinPointcutService {
     public void annoFoo() {
         log.info("@annotation method execute");
     }
+
+    public void annoArgsFoo(AnnoParam annoParam) {
+        log.info("@args method execute");
+    }
 }

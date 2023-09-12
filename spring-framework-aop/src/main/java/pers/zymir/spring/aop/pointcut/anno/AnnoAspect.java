@@ -45,4 +45,19 @@ public class AnnoAspect {
         String name = methodSignature.getMethod().getName();
         log.info("@annotation advice 当前方法：{} 被拦截", name);
     }
+
+    /**
+     * @args pointcut指示器
+     * 如果某个方法的参数的类具有指定注解, 则该方法会被拦截
+     */
+    @Pointcut("@args(pers.zymir.spring.aop.pointcut.anno.AnnoAop)")
+    public void annoArgsPointcut() {
+    }
+
+    @Before("annoArgsPointcut()")
+    public void annoArgsAdvice(JoinPoint joinPoint) {
+        MethodSignature methodSignature = AopJoinPointAspect.AopUtil.convert2MethodSignature(joinPoint);
+        String name = methodSignature.getMethod().getName();
+        log.info("@args advice 当前方法：{} 被拦截", name);
+    }
 }
