@@ -20,6 +20,7 @@
         <module>spring-framework-spel</module>
         <module>spring-framework-mvc</module>
         <module>spring-framework-transactional</module>
+        <module>spring-framework-expansion</module>
     </modules>
 
     <properties>
